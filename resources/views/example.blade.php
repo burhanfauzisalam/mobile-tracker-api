@@ -311,6 +311,10 @@ $(function () {
     const userMarkers = {};
     const userData = {};
 
+    const mqttProtocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+    const mqttPort = mqttProtocol === 'wss' ? 8084 : 8083;
+    const mqttUrl = `${mqttProtocol}://mqtt.burhanfs.my.id:${mqttPort}`;
+
     const $connectionStatus = $('#connection-status');
     const $userCount = $('#user-count');
     const $userList = $('#user-list');
@@ -404,7 +408,7 @@ $(function () {
         attribution: 'OpenStreetMap'
     }).addTo(map);
 
-    const client = mqtt.connect("ws://mqtt.burhanfs.my.id:8083");
+    const client = mqtt.connect(mqttUrl);
 
     client.on("connect", () => {
         setConnectionStatus("Online", "online");
