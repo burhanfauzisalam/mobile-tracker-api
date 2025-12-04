@@ -313,7 +313,7 @@ $(function () {
 
     const mqttProtocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
     const mqttPort = mqttProtocol === 'wss' ? 8084 : 8083;
-    const mqttUrl = `${mqttProtocol}://mqtt.burhanfs.my.id:${mqttPort}`;
+    const mqttUrl = `${mqttProtocol}://mqtt.burhanfs.my.id/mqtt/mqtt:${mqttPort}`;
 
     const $connectionStatus = $('#connection-status');
     const $userCount = $('#user-count');
