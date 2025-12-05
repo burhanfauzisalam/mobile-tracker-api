@@ -312,8 +312,8 @@ $(function () {
     const userData = {};
 
     const mqttProtocol = window.location.protocol === 'https:' ? 'wss' : 'wss';
-    const mqttPort = mqttProtocol === 'wss' ? 8084 : 8084;
-    const mqttUrl = `${mqttProtocol}://mqtt.burhanfs.my.id/mqtt/mqtt:${mqttPort}`;
+    const mqttPort = mqttProtocol === 'wss' ? 8884 : 8884;
+    const mqttUrl = `${mqttProtocol}://portal.ptbmi.com/mqtt:${mqttPort}`;
 
     const $connectionStatus = $('#connection-status');
     const $userCount = $('#user-count');
